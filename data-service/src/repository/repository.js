@@ -6,7 +6,7 @@ let getAll = (collection) => (callback) => {
     })
 }
 
-let GetByFilter = (collection) => (filter, callback) => {
+let getByFilter = (collection) => (filter, callback) => {
     mongodb.connect((err, db) => {
         db.collection(collection).find(filter).toArray(callback);
     })
@@ -22,4 +22,4 @@ let disconnect = () => {
     return mongodb.disconnect();
 }
 
-module.exports = { getAll, GetByFilter, getById, disconnect}
+module.exports = { getAll, getByFilter, getById, disconnect}
